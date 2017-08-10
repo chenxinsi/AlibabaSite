@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>xinsi</title>
+<script language="javascript">  
+//创建一个showhidediv的方法，直接跟ID属性  
+function showhidediv(id){  
+   document.getElementById(id).style.display="none";
+   document.getElementById("python2").style.display="block";
+}  
+
+function showdiv(){  
+   document.getElementById("python").style.display="none";
+   document.getElementById("android").style.display="block";
+}
+</script> 
+</head>
+<body>
+<button type="submit"  onclick="showdiv()" >Android</button>
+<div id="android" name="android" style="display:none">
+<p><h1>ANDROID 中级进阶</h1></p>
+<ol>
+   <li>ListView
+       <ul>
+          <li>数据更新问题</li>
+          <li>可复用的自定义BaseAdapter</li>
+          <li>Item多布局的实现</li>
+          <li>基于监听事件的处理机制</li>
+          <li>基于回调事件的处理机制</li>
+          <li>Handler消息传递机制浅析</li>
+          <li>Android调用WebService</li>
+          <li>WebView(网页视图)基本用法</li>
+          <li>WebView和JavaScript交互基础</li>
+          <li>数据存储与访问---初见SQLite数据库
+             <ol>
+                <li>使用Android提供的API操作SQLite</li>
+                <li>使用SQL语句操作数据库</li>
+             </ol>
+
+          </li>
+          <li>数据存储与访问之——又见SQLite数据库
+             <ol>
+                <li>1.SQLite事务</li>
+                <li>2.SQLite存储大二进制文件</li>
+                <li>3.SimpleCursorAdapter绑定数据库数据</li>
+                <li>4.数据库升级的一些集锦</li>
+             </ol>  
+           </li>
+         
+       </ul>
+   </li>
+
+</ol>
+
+
+
+</div>
+
+<div id="python" name="python">
+<div id="python1"  name="python1">
+<p><h1>Python 基础语法</h1></p>
+<ol>
+<li>编码</li>
+<li>标志符</li>
+<li>注释</li>
+<li>行与缩进</li>
+<li>多行语句</li>
+<li>数据类型</li>
+<li>字符串</li>
+<li>空行</li>
+<li>等待用户输入</li>
+<li>同一行显示多条语句</li>
+<li>多个语句构成代码组</li>
+<li>Print 输出</li>
+<li>import 与 from...import</li>
+<li>命令行参数</li>
+</ol>
+<p><a href="http://www.runoob.com/">runoob</a></p>
+<button type="submit" name="btn_next" onclick="showhidediv('python1')"  >下一页</button>
+</div>
+
+<div id="python2"  name="python2" style="display:none">
+<p><h1>Python 基本数据类型</h1></p>
+<ol>
+<li>多个变量赋值</li>
+<li>标准数据类型
+   <ul>
+      <li>Number (数字)--------------------------------------(type() isinstance()  数值运算)</li>
+      <li>String (字符串)-------------------------------------（待续。）</li>
+      <li>List (列表)</li>
+      <li>Tuple (元组)</li>
+      <li>Sets (集合)</li>
+      <li>Dictionary (字典)</li>
+   </ul>
+
+</li>
+</ol>
+<button type="submit" name="btn_next" onclick="showhidediv('python2')"  >下一页</button>
+</div>
+</div>
+
+</body>
+
+</html>
