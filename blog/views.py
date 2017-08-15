@@ -1,19 +1,20 @@
 from django.shortcuts import render
 
-from blog.models import Article
+from blog.models import Users
 from django.http import HttpResponse
 
 
 
 def index(request):
- 
-  name = Article.objects.get(title="root");
-  return render(request, 'index.html',{'data':name});
+  return render(request, 'index.html');
 
 
-def check(request):
-    username = request.GET['blog_username']
-    if username=='547187896@qq.com':
+def login(request):
+    username = request.GET['username']
+    passwd = request.GET['password']
+    print(passwd)
+    print(Users.objects.get(name=username))
+    if str(Users.objects.get(name=username))== passwd:
 #    passwd = request.GET['blog_passwd',None]
       return render(request, 'home.html', {'name': username})
     else: 
