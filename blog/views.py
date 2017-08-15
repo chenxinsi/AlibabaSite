@@ -16,7 +16,7 @@ def login(request):
     print(Users.objects.get(name=username))
     if str(Users.objects.get(name=username))== passwd:
 #    passwd = request.GET['blog_passwd',None]
-      return render(request, 'home.html', {'name': username})
+      return render(request, 'login.html', {'name': username})
     else: 
       return render(request, 'error.html') 
 
