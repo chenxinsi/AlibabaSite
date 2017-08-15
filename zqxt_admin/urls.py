@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'toLogin',views.toLogin),
     url(r'login/', views.login, name='login'),
     #url(r'next/', views.next, name='next'),
     url(r'^admin/', admin.site.urls),

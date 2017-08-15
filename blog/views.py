@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-  return render(request, 'index.html');
+  return render(request, 'index.html',{'name':None})
 
 
 def login(request):
@@ -16,9 +16,11 @@ def login(request):
     print(Users.objects.get(name=username))
     if str(Users.objects.get(name=username))== passwd:
 #    passwd = request.GET['blog_passwd',None]
-      return render(request, 'login.html', {'name': username})
+      return render(request, 'index.html', {'name': username})
     else: 
       return render(request, 'error.html') 
 
+def toLogin(request):
+    return render(request, 'login.html')
     
 # Create your views here.
