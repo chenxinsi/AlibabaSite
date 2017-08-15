@@ -26,5 +26,11 @@ urlpatterns = [
     url(r'login/', views.login, name='login'),
     #url(r'next/', views.next, name='next'),
     url(r'^admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+] #+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
+# if settings.DEBUG is False:   #if DEBUG is True it will be served automatically
+#     urlpatterns += urlpatterns('',
+#             url(r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+#     )
+
+handler404 = views.page_not_found

@@ -1,10 +1,13 @@
 from django.shortcuts import render
-
+from django.shortcuts import render_to_response
 from blog.models import Users
 from django.http import HttpResponse
 
 
-keys = ('id','passwd','name')
+keys = ('id','name','passwd')
+def page_not_found(request):
+    return render_to_response('error.html')
+
 def index(request):
   userdata = Users.objects.all().values_list('id', 'name', 'passwd')
   return render(request, 'index.html',{'name':None,'userdata':userdata,'keys':keys})

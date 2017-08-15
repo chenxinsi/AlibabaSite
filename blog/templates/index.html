@@ -73,9 +73,12 @@
 		<tbody>
         {% for user in userdata %}
 			<tr>
-                {% for data in user %}
+                {% comment %}{% for data in user %}
 				<td>{{  data }}</td>
-                {% endfor %}
+                {% endfor %}{% endcomment %}
+               <td>{{  user.0 }}</td>
+               <td>{{  user.1 }}</td>
+               <td>{{  user.2 }}</td>
 			</tr>
         {% endfor %}
 		</tbody>
